@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Categoria {
 	
+	//Ho deciso di fare la relazione con libro monodirezionale(solo da parte del libro)
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

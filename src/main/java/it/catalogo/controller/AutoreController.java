@@ -43,7 +43,7 @@ public class AutoreController {
 	@Operation(summary = "Aggiunge un Autore", description = "cancellare dal JSON la lista di autori, cancellare tutti gli id, "
 			+ "per i libri se il titolo e' gia' presente prende il libro salvato nel database altrimenti lo crea nuovo, "
 			+ "nel caso in cui il libro lo crea fa la stessa cosa per la categoria")
-	@ApiResponse(responseCode = "200", description = "Autore inserit0")
+	@ApiResponse(responseCode = "200", description = "Autore inserito")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<Autore> save(@RequestBody Autore autore){
 		if(!autoreService.findByNomeAndCognome(autore.getNome(), autore.getCognome()).isEmpty()) {

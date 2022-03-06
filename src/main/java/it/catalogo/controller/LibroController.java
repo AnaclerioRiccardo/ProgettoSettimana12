@@ -21,7 +21,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import it.catalogo.exception.SegreteriaException;
-import it.catalogo.model.Autore;
 import it.catalogo.model.Libro;
 import it.catalogo.service.LibroService;
 
