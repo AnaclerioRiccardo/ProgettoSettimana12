@@ -1,5 +1,6 @@
 package it.catalogo.testweb;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,6 +29,12 @@ class TestAutoreController {
 	@WithMockUser
 	final void testGetById() throws Exception {
 		this.mockMvc.perform(get("http://localhost:8080/api/autore/1")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	@Test
+	@WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
+	final void testDeleteById() throws Exception {
+		this.mockMvc.perform(delete("http://localhost:8080/api/autore/1")).andDo(print()).andExpect(status().isOk());	
 	}
 
 }
